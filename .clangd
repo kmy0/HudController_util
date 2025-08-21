@@ -1,0 +1,7 @@
+Diagnostics:
+  UnusedIncludes: Strict
+  MissingIncludes: Strict
+If:
+  PathMatch: .*/deps/*
+Index:
+  Background: Skip

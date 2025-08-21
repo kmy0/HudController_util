@@ -1,0 +1,40 @@
+# Reference: https://build-cpp.github.io/cmkr/cmake-toml
+# to build:
+# > cmake -B build
+# > cmake --build build --config Release
+[project]
+name = "hudcontroller_util"
+
+[target.sol2]
+type = "interface"
+include-directories = ["deps/sol2/include"]
+
+[target.lua]
+type = "static"
+sources = ["deps/lua/*.c"]
+include-directories = ["deps/lua"]
+
+
+[target.reframework]
+type = "interface"
+sources = ["deps/reframework/**.cpp"]
+headers = ["deps/reframework/**.h", "deps/reframework/**.hpp"]
+include-directories = ["deps/reframework"]
+
+[target.hudcontroller_util]
+type = "shared"
+sources = ["src/**.cpp"]
+headers = ["src/**.hpp", "src/**.h"]
+include-directories = ["src"]
+link-libraries = [
+    "lua",
+    "sol2",
+    "reframework"
+]
+compile-features = ["cxx_std_20"]
+
+cmake-after= """
+set_target_properties(hudcontroller_util PROPERTIES
+                      RUNTIME_OUTPUT_DIRECTORY_RELEASE ../bin
+)
+"""

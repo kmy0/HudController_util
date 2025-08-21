@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "vs2022",
+            "displayName": "Visual Studio 2022 - amd64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Release",
+            "description": "",
+            "displayName": "Release",
+            "configuration": "Release",
+            "configurePreset": "vs2022"
+        }
+    ]
+}

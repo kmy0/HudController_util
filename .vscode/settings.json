@@ -1,0 +1,12 @@
+{
+    "editor.rulers": [
+        120
+    ],
+    "[cpp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "cmake.generator": "Ninja",
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "cmake.useCMakePresets": "always"
+}
