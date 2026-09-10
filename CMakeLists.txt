@@ -99,6 +99,10 @@ target_include_directories(reframework INTERFACE
 # Target: hudcontroller_util
 set(hudcontroller_util_SOURCES
 	"src/plugin.cpp"
+	"src/text_input.cpp"
+	"src/util.cpp"
+	"src/text_input.hpp"
+	"src/util.hpp"
 	cmake.toml
 )
 
